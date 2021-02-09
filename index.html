@@ -6,6 +6,13 @@
 //             $.get( "view-source:https://www.google.com", function( data ) {
 //                 console.log(data);     
 //             });
+             $.ajaxSetup({
+                headers:{
+                    'origin': "*",
+                    'Access-Control-Allow-Origin':"*"
+                }
+            });
+            
             $.ajax({
                 url:"https://codepen.io/dsr/pen/LWwyap",
                 type:"GET",
