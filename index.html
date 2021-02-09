@@ -6,21 +6,29 @@
 //             $.get( "view-source:https://www.google.com", function( data ) {
 //                 console.log(data);     
 //             });
-             $.ajaxSetup({
-                headers:{
-                    'origin': "*",
-                    'Access-Control-Allow-Origin':"*"
-                }
-            });
+//              $.ajaxSetup({
+//                 headers:{
+//                     'origin': "*",
+//                     'Access-Control-Allow-Origin':"*"
+//                 }
+//             });
             
-            $.ajax({
-                url:"https://codepen.io/dsr/pen/LWwyap",
-                type:"GET",
-                success: function(res){
-                var text = res.responseText;
-                alert(text);
-                }
-            });
+//             $.ajax({
+//                 url:"https://codepen.io/dsr/pen/LWwyap",
+//                 type:"GET",
+//                 success: function(res){
+//                 var text = res.responseText;
+//                 alert(text);
+//                 }
+//             });
+            
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function() {
+              console.log(this.responseXML.title);
+            }
+            xhr.open("GET", "file.html");
+            xhr.responseType = "document";
+            xhr.send();
         </script>
     </head>
     <body>
